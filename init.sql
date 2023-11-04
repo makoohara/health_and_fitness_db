@@ -13,6 +13,7 @@ CREATE TABLE users (
 CREATE TABLE workouts (
     workout_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
+    workout_date DATE,
     workout_type VARCHAR(255),
     duration DECIMAL(5,2),
     heart_rate INT,
@@ -25,6 +26,7 @@ CREATE TABLE workouts (
 CREATE TABLE nutrition_logs (
     log_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
+    log_date DATE,
     meal_type VARCHAR(255),
     ingredients TEXT,
     macronutrients TEXT,
@@ -35,6 +37,7 @@ CREATE TABLE nutrition_logs (
 CREATE TABLE sleep_logs (
     sleep_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
+    sleep_date DATE,
     sleep_duration DECIMAL(5,2),
     sleep_efficiency DECIMAL(5,2),
     sleep_stages TEXT,
@@ -44,8 +47,10 @@ CREATE TABLE sleep_logs (
 CREATE TABLE health_metrics (
     metric_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
+    log_date DATE,
     mood_log VARCHAR(255),
     hydration_level DECIMAL(5,2),
     menstrual_cycle TEXT,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
