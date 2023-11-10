@@ -9,7 +9,6 @@ CREATE TABLE users (
     profile_picture VARCHAR(255),
     fitness_goal VARCHAR(255)
 );
-
 CREATE TABLE workouts (
     workout_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -22,7 +21,6 @@ CREATE TABLE workouts (
     device_data TEXT,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-
 CREATE TABLE nutrition_logs (
     log_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -33,7 +31,6 @@ CREATE TABLE nutrition_logs (
     micronutrients TEXT,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-
 CREATE TABLE sleep_logs (
     sleep_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -43,7 +40,6 @@ CREATE TABLE sleep_logs (
     sleep_stages TEXT,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-
 CREATE TABLE health_metrics (
     metric_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -53,4 +49,3 @@ CREATE TABLE health_metrics (
     menstrual_cycle TEXT,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-

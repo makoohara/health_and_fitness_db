@@ -1,3 +1,12 @@
+-- Indexes for improved query performance
+CREATE INDEX idx_users_user_id ON users (user_id);
+CREATE INDEX idx_users_fitness_goal ON users (fitness_goal);
+CREATE INDEX idx_workouts_user_id_date ON workouts (user_id, workout_date);
+CREATE INDEX idx_workouts_calories_burned ON workouts (calories_burned);
+CREATE INDEX idx_nutrition_logs_user_id_date ON nutrition_logs (user_id, log_date);
+CREATE INDEX idx_sleep_logs_user_id_date ON sleep_logs (user_id, sleep_date);
+CREATE INDEX idx_health_metrics_user_id_hydration ON health_metrics (user_id, hydration_level);
+
 -- Retrieve a user's complete profile, including their fitness goals and personal details.
 SELECT * FROM users 
 WHERE user_id = 1;
